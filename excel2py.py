@@ -1,6 +1,9 @@
 import os
+import warnings
 
 from openpyxl import load_workbook
+
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 # 加载 Excel 文件
 xml_path = input("请输入 XML 文件绝对路径：")
@@ -91,3 +94,5 @@ if __name__ == "__main__":
     test_case = get_test_case_info()
     suite_name = input("请输入测试套件名称（英文）：")
     generate_test_case(test_case, suite_name)
+    # 生成完毕，按任意键退出
+    input("生成完毕，按任意键退出")
